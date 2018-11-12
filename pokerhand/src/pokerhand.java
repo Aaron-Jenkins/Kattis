@@ -17,20 +17,23 @@ public class pokerhand {
             counter++;
         }
 
-        String temp = values[0];
+        String temp;
         //String card = values[0];
         counter = 0;
         int max = 0;
         for (int i = 0; i < values.length; i++) {
-            if (temp.equals(values[i])) {
-                counter++;
-            }
-            if (counter > max) {
-                max = counter;
-                //card = temp;
+            temp = values[i];
+            counter = 0;
+            for (int j = 0; j < values.length; j++) {
+                if (temp.equals(values[j])) {
+                    counter++;
+                }
+                if (counter > max) {
+                    max = counter;
+                }
             }
         }
-        System.out.println("Max is: " + max);
+        System.out.println(max);
         /*
         for (int i = 0; i < hand.length; i++) {
             System.out.println("Hand: " + "i: " + i + hand[i]);
