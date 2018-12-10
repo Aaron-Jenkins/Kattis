@@ -7,7 +7,7 @@ public class CD {
 
         int jack = in.nextInt();
         int jill = in.nextInt();
-
+        int start = 0;
 
 
         int tmp;
@@ -23,9 +23,10 @@ public class CD {
 
             for (int i = 0; i < jill; i++) {
                 tmp = in.nextInt();
-                for (int j = 0; j < jack; j++) {
+                for (int j = start; j < jack; j++) {
                     if(tmp == jacks[j]){
                         count++;
+                        start = j;
                         j = jack;
                     }
                 }
