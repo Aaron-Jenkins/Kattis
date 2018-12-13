@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class LastFactorialDigit {
@@ -8,21 +7,22 @@ public class LastFactorialDigit {
         Scanner in = new Scanner(System.in);
 
         int x = in.nextInt();
-        int ans = 0;
-        int tmp;
-            for (int i = 0; i < x; i++) {
-                tmp = in.nextInt();
-                for (int j = 0; j < tmp; j++) {
-                    if (j == 0) {
-                        j = 1;
-                    }
-                    if (tmp == 1) {
-                        ans = 1;
-                    } else {
-                        ans = j * (j+1);
-                    }
-                }
-                System.out.println(ans);
-            }
+
+        int[] ans = new int[10];
+
+        ans[0] = 1;
+        ans[1] = 2;
+        ans[2] = 6;
+        ans[3] = 4;
+        ans[4] = 0;
+        ans[5] = 0;
+        ans[6] = 0;
+        ans[7] = 0;
+        ans[8] = 0;
+        ans[9] = 0;
+
+        for (int i = 0; i < x; i++) {
+            System.out.println(ans[in.nextInt()-1]);
+        }
     }
 }
