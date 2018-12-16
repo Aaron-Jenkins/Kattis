@@ -5,18 +5,16 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
 
-        int denominator = in.nextInt();
         int numerator = in.nextInt();
+        int denominator = in.nextInt();
         int wholeNum;
 
 
-        while (denominator != 0) {
-            wholeNum = denominator / numerator;
-            System.out.println(wholeNum + " " + denominator % numerator + " / " + numerator);
-            denominator = in.nextInt();
+        while (numerator != 0) {
+            wholeNum = numerator / denominator;
+            System.out.println(wholeNum + " " + numerator % denominator + " / " + denominator);
             numerator = in.nextInt();
+            denominator = in.nextInt();
         }
-
-
     }
 }
