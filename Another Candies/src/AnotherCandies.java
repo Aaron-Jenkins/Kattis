@@ -6,40 +6,28 @@ public class AnotherCandies {
         Scanner in = new Scanner(System.in);
 
         int loop = Integer.parseInt(in.nextLine());
-        int total = in.nextInt();
-        int sum = 0;
-        //int cases[];
-
-        /*for (int i = 0; i < loop; i++) {
-            total = Integer.parseInt(in.nextLine());
-            cases = new int[total];
-            for (int j = 0; j < total; j++) {
-                cases[i] = Integer.parseInt(in.nextLine());
-                sum += cases[i];
-                System.out.println("I: " + i + " " + cases[i]);
-            }
-            sum = 0;
-            in.nextLine();
-        }*/
+        int total;
+        int sum;
 
         for (int i = 0; i < loop; i++) {
+            total = in.nextInt();
+            sum = 0;
             for (int j = 0; j < total; j++) {
-                sum += in.nextInt();
+
+                // input can be too big for long datatype, need to add try/except solution using biginteger in this scenario.
+                if(i == loop -1 && j == total -1) {
+                    sum+= in.nextInt();
+                    in.close();
+                } else {
+                    sum += in.nextInt();
+                }
             }
             if (sum % total == 0) {
                 System.out.println("YES");
             } else {
                 System.out.println("NO");
             }
-            total = in.nextInt();
-            sum = 0;
-        }
 
-        sum += in.nextInt();
-        if (sum % total == 0) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
         }
     }
 }
